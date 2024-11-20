@@ -6,77 +6,102 @@
       <div id="templatemo_main_wrapper">
           <div id="templatemo_main">
           <h2>Portfolio</h2>
-
+						{% for gallery in gallery %}
               <div class="gallery_box">
-                  <a href="{% static "images/portfolio/01.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/01.jpg" %}" alt="Portfolio 01" class="imgage-with-frame"/></a>
-                  <h5>Maecenas Orci Varius</h5>
-                  <p>Suspendisse nec libero quis justo. </p>
+                  <a href="{{gallery.link_url}}" rel="lightbox[portfolio]">
+                    <img src="{{gallery.image.url}}" alt="Portfolio 01" class="{{gallery.image_class}}"/></a>
+                  <h5>{{gallery.title}}</h5>
+                  <p>{{gallery.description}} </p>
               </div>
-              
+						{% endfor %}	
+							{% comment %}               
               <div class="gallery_box">
-                  <a href="{% static "images/portfolio/02.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/02.jpg" %}" alt="Portfolio 02" class="imgage-with-frame"/></a>
+                  <a href="{% static "images/portfolio/02.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/02.jpg" %}" alt="Portfolio 02" class="imgage-with-frame"/></a>
                   <h5>Vestibulum ante ipsum</h5>
                   <p>Proin sit amet rutrum turpis ultrices.</p>
               </div>
               
               <div class="gallery_box">
-                  <a href="{% static "images/portfolio/02.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/02.jpg" %}" alt="Portfolio 03" class="imgage-with-frame"/></a>            
+                  <a href="{% static "images/portfolio/02.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/02.jpg" %}" alt="Portfolio 03" 
+                    class="imgage-with-frame"/></a>            
                   <h5>Donec vitae leo ante</h5>
                   <p>Morbi porta, sem vitae lacinia.</p>
               </div>
               
               <div class="gallery_box no_margin_right">
-                  <a href="{% static "images/portfolio/03.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/03.jpg" %}" alt="Portfolio 04" class="imgage-with-frame"/></a>
+                  <a href="{% static "images/portfolio/03.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/03.jpg" %}" alt="Portfolio 04"
+                     class="imgage-with-frame"/></a>
                   <h5>Sed porttitor tempus</h5>
                   <p>Aliquam rutrum vehicula turpis.</p>
               </div>
               
               <div class="gallery_box">
-                  <a href="{% static "images/portfolio/04.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/04.jpg" %}" alt="Portfolio 05" class="imgage-with-frame"/></a>
+                  <a href="{% static "images/portfolio/04.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/04.jpg" %}" alt="Portfolio 05" 
+                    class="imgage-with-frame"/></a>
                   <h5>Praesent facilisis risus</h5>
                   <p>Integer venenatis pharetra magna.</p>
               </div>
               
               <div class="gallery_box">
-                  <a href="{% static "images/portfolio/05.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/05.jpg" %}" alt="Portfolio 06" class="imgage-with-frame"/></a>
+                  <a href="{% static "images/portfolio/05.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/05.jpg" %}" alt="Portfolio 06" 
+                    class="imgage-with-frame"/></a>
                   <h5>Donec Purus Nulla</h5>
                   <p>Vestibulum quis nulla nunc.</p>
               </div>
               
               <div class="gallery_box">
-                  <a href="{% static "images/portfolio/03.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/03.jpg" %}" alt="Portfolio 07" class="imgage-with-frame"/></a>
+                  <a href="{% static "images/portfolio/03.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/03.jpg" %}" alt="Portfolio 07" 
+                    class="imgage-with-frame"/></a>
                   <h5>Donec in Volutpat Erat</h5>
                   <p>In hac habitasse platea dictumst.</p>
               </div>
               
               <div class="gallery_box no_margin_right">
-                  <a href="{% static "images/portfolio/04.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/04.jpg" %}" alt="Portfolio 08" class="imgage-with-frame"/></a>
+                  <a href="{% static "images/portfolio/04.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/04.jpg" %}" alt="Portfolio 08"
+                     class="imgage-with-frame"/></a>
                   <h5>Class Aptent Taciti </h5>
                   <p>Integer venenatis pharetra magna.</p>
               </div>
-              
+               
               <div class="gallery_box">
-                  <a href="{% static "images/portfolio/05.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/05.jpg" %}" alt="Portfolio 09" class="imgage-with-frame"/></a>
+                  <a href="{% static "images/portfolio/05.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/05.jpg" %}" alt="Portfolio 09"
+                     class="imgage-with-frame"/></a>
                   <h5>Aliquam aliquet eleifend</h5>
                   <p>Curabitur elementum lectus et nisi.</p>
               </div>
               
               <div class="gallery_box">
-                  <a href="i{% static "images/portfolio/05.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/05.jpg" %}" alt="Portfolio 10" class="imgage-with-frame"/></a>
+                  <a href="i{% static "images/portfolio/05.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/05.jpg" %}" alt="Portfolio 10"
+                     class="imgage-with-frame"/></a>
                   <h5>Proin ipsum magna</h5>
                   <p>Fusce scelerisque, lacus id lobortis.</p>
               </div>
               
               <div class="gallery_box">
-                  <a href="{% static "images/portfolio/03.jpg" %}" rel="lightbox[portfolio]"><img src="{% static "images/portfolio/03.jpg" %}" alt="Portfolio 11" class="imgage-with-frame"/></a>
+                  <a href="{% static "images/portfolio/03.jpg" %}" rel="lightbox[portfolio]">
+                    <img src="{% static "images/portfolio/03.jpg" %}" alt="Portfolio 11"
+                     class="imgage-with-frame"/></a>
                   <h5>Nulla vehicula dolor et</h5>
                   <p>Phasellus non risus eu nulla pharetra.</p>
-              </div>
+              </div> {% endcomment %}
               
               <div class="gallery_box no_margin_right">
-                  <a href="{% static "images/portfolio/04.jpg" %} %}" rel="lightbox[portfolio]"><img src="{% static  "images/portfolio/04.jpg" %}" alt="Portfolio 12" class="imgage-with-frame"/></a>
-                  <h5>Aliquam quis dolor nisi</h5>
-                  <p>Duis ut tellus. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a>.</p>
+                  <a href="{% static "images/portfolio/04.jpg" %} %}" rel="lightbox[portfolio]">
+                    <img src="{{gallery1.image.url}}" alt="{{gallery1.image_title}}" 
+                    class="{{gallery1.image_class}}"/></a>
+                  <h5>{{gallery1.title}}</h5>
+                  <p>{{gallery1.description}} <a href="{{gallery1.link_url1}}" rel="nofollow">
+                    <strong>{{gallery1.link_name1}}</strong></a> &amp; <a href="{{gallery1.link_url2}}" 
+                    rel="nofollow"><strong>{{gallery1.link_name2}}</strong></a>.</p>
               </div>
               
               <div class="cleaner"></div>

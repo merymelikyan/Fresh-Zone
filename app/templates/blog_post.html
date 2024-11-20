@@ -9,15 +9,21 @@
                 
               <div id="content" class="float_l">
                   <div class="post">
-                      <div class="post_image"><img src="{% static "images/blog/01.jpg" %}" alt="Image 01" /><span class="date">June 18, 2048</span></div>
-                      <h2>Web Design and Development</h2>
-                      <p>Fresh Zone is one of the free website templates designed by templatemo for your websites. Cras eget fermentum sem. Maecenas nec purus lorem, a sodales lectus. Etiam consequat nulla sit amet nisl volutpat ornare. Donec purus nulla, egestas ac porttitor et, pharetra nec felis. Donec lobortis fringilla blandit. Fusce a purus vel justo pulvinar tempor.</p>
-                      <p>Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> &amp; <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a>. Morbi venenatis augue sit amet ante facilisis feugiat sed in lectus. Vivamus imperdiet, ante a pretium vehicula, ante enim sodales mi, eu rutrum odio turpis eget arcu. Proin a elit nisl, id aliquam felis. Nunc ultrices iaculis quam, sed commodo erat tempus mollis. Duis ultricies nulla sed dolor egestas id. Phasellus ut lacus sit amet justo interdum molestie.</p>
-                      <p align="justify">In hac habitasse platea dictumst. Ut ut tortor eget tortor imperdiet fermentum. Sed leo lacus, posuere euismod bibendum et, sagittis sed augue. Cras in dapibus turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada <a href="#">fames ac turpis egestas</a>. Donec vitae est nisi. In cursus tempus ligula, ac cursus nibh dictum mollis. Sed dui enim, commodo et rhoncus non, tincidunt et dui.</p>
-                      <p align="justify">Vestibulum at lorem ac lectus rhoncus aliquet eget ac mauris. Proin nec nunc magna, eu blandit massa. Sed elementum nisi ut quam vehicula eu egestas nisi varius. <a href="#">Aenean semper</a> convallis mi eu congue. In vel neque orci. Pellentesque ut viverra magna. Maecenas nulla metus, venenatis <a href="#">non gravida vel</a>, adipiscing sit amet felis. Curabitur aliquet felis sit amet metus iaculis sed tempor erat cursus.</p>
+                      <div class="post_image"><img src="{% static "images/blog/01.jpg" %}" alt="Image 01" /><span class="date">{{blog_post.text1}}</span></div>
+                      <h2>{{blog_post.title}}</h2>
+                      <p>{{blog_post.description1}}</p>
+                      <p>{{blog_post.text2}} <a href="{{blog_post.link_url1}}" rel="nofollow"><strong>{{blog_post.link_name1}}</strong></a>
+                         &amp; <a href="{{blog_post.link_url2}}" rel="nofollow"><strong>{{blog_post.link_name2}}</strong></a>
+                         {{blog_post.description2}}</p>
+                      <p align="justify">{{blog_post.description3}}
+                    
+                        <a href="#">{{blog_post.link_name3}}</a>{{blog_post.description4}}</p>
+                      <p align="justify">{{blog_post.description5}}
+                        <a href="#">{{blog_post.link_name4}}</a> {{blog_post.description6}}<a href="#">{{blog_post.link_name5}}</a>
+                        {{blog_post.description7}}</p>
               </div>
             
-            <h3>Comments</h3>
+            <h3>{{comments_main.title}}</h3>
                         
             <div id="comment_section">
             <ol class="comments first_level">
@@ -26,12 +32,12 @@
                         <div class="comment_box commentbox1">
                                 
                             <div class="gravatar">
-                                <img class="image_frame" src="{% static "images/avator.png" %}" alt="author 6" />
+                                <img class="image_frame" src="{{comments.0.image.url}}" alt="{{comments.0.image_title}}" />
                             </div>
                             
                             <div class="comment_text">
-                                <div class="comment_author">Steven <span class="date">November 22, 2048</span> <span class="time">10:52 pm</span></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum ornare nulla ac laoreet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum ornare nulla ac laoreet.</p>
+                                <div class="comment_author">{{comments.0.name}} <span class="date">{{comments.0.date}}</span> <span class="time">{{comments.0.time}}</span></div>
+                                <p>{{comments.0.description}}</p>
                               <div class="reply"><a href="#">Reply</a></div>
                             </div>
                             <div class="cleaner"></div>
@@ -40,39 +46,32 @@
                     </li>
                     
                     <li>
-                    
                             <ol class="comments">
-                        
                                 <li>
                                     <div class="comment_box commentbox2">
-                                    
                                     <div class="gravatar">
-                                        <img class="image_frame" src="{% static "images/avator.png" %}" alt="author 6" />
+                                        <img class="image_frame" src="{{comments.1.image.url}}" alt="{{comments.1.image_title}}" />
                                     </div>
                                     <div class="comment_text">
-                                    <div class="comment_author">Richard <span class="date">November 24, 2048</span> <span class="time">09:20 am</span></div>
-                                    <p>Nullam bibendum tempor est nec cursus.</p>
+                                    <div class="comment_author">{{comments.1.name}} <span class="date">{{comments.1.date}}</span> <span class="time">{{comments.1.time}}</span></div>
+                                    <p>{{comments.1.description}}</p>
                                     <div class="reply"><a href="#">Reply</a></div>
                                     </div>
                                     
                                     <div class="cleaner"></div>
                                     </div>   
-                                
                                 </li>
                                 
                                 <li>
-                        
                                     <ol class="comments">
-                                
                                         <li>
                                             <div class="comment_box commentbox1">
-                                            
                                                 <div class="gravatar">
-													<img class="image_frame" src="{% static "images/avator.png" %}" alt="author 6" />
-												</div>
+												            	            <img class="image_frame" src="{{comments.2.image.url}}" alt="{{comments.2.image_title}}" />
+												                        </div>
                                                 <div class="comment_text">
-                                                    <div class="comment_author">John <span class="date">November 26, 2048</span> <span class="time">11:42 am</span></div>
-                                                    <p> Vestibulum eget ligula et ipsum laoreet aliquam sed ut risus.  </p>
+                                                    <div class="comment_author">{{comments.2.name}} <span class="date">{{comments.2.date}}/span> <span class="time">{{comments.2.time}}</span></div>
+                                                    <p> {{comments.2.description}}</p>
                                                   <div class="reply"><a href="#">Reply</a></div>
                                                 </div>
                                                 
@@ -93,11 +92,11 @@
                                 
                                  
                             <div class="gravatar">
-                                <img class="image_frame" src="{% static "images/avator.png" %}" alt="author 6" />
+                                <img class="image_frame" src="{{comments.3.image.url}}" alt="{{comments.3.image_title}}" />
                             </div>
                             <div class="comment_text">
-                                <div class="comment_author">Martin <span class="date">November 28, 2048</span> <span class="time">05:24 pm</span></div>
-                                <p> Nulla sagittis elit in enim ullamcorper vitae tincidunt metus bibendum.</p>
+                                <div class="comment_author">{{comments.3.name}}<span class="date">{{comments.3.date}}</span> <span class="time">{{comments.3.time}}</span></div>
+                                <p> {{comments.3.description}}</p>
                               <div class="reply"><a href="#">Reply</a></div>
                             </div>
                             
@@ -110,11 +109,11 @@
                         <div class="comment_box commentbox1">
                                 
                            <div class="gravatar">
-                                <img class="image_frame" src="{% static "images/avator.png" %}" alt="author 6" />
+                                <img class="image_frame" src="{{comments.4.image.url}}" alt="{{comments.4.image_title}}" />
                             </div>
                             <div class="comment_text">
-                                <div class="comment_author">David <span class="date">November 30, 2048</span> <span class="time">11:38 am</span></div>
-                                <p> Quisque ut risus nibh. Etiam consequat elit eu nisi porta ac auctor nisl ultrices.</p>
+                                <div class="comment_author">{{comments.4.name}}<span class="date">{{comments.4.date}}</span> <span class="time">{{comments.4.time}}</span></div>
+                                <p> {{comments.4.description}}</p>
                               <div class="reply"><a href="#">Reply</a></div>
                             </div>
                             
@@ -166,7 +165,13 @@
           </div> <!-- END of content -->
         
           <div id="sidebar" class="float_r">
-            <h3>Services</h3>
+            <h3>{{side_bar_main.0.title}}</h3>
+              <ul class="templatemo_list">
+                {% for block in services %}
+                  <li>{{block.title}}</li>
+                {% endfor %}
+              </ul>
+            {% comment %} <h3>Services</h3>
               <ul class="templatemo_list">
                   <li>Augue felis pharetra felis sed</li>
                   <li>Condimentum vulputate augue</li>
@@ -175,17 +180,23 @@
                   <li>Integer placerat dolor vel</li>
                   <li>Tortor mi in massa donec</li>
                   <li>Vulputate tortor mi in massa</li>
-              </ul>
+               {% endcomment %}
               
-              <div class="cleaner h50"></div>
               
-              <h3>Popular Posts</h3>
+          <div class="cleaner h50"></div>
+            
+            <h3>{{side_bar_main.1.title}}</h3>
+            <ul class="popular_post">
+              {% for post in popular_posts %}
+                <li><a href="{{post.link_url}}">{{post.link_name}}</a>{{post.description}}</li>
+              {% endfor %}  
+              {% comment %} <h3>Popular Posts</h3>
               <ul class="popular_post">
                 <li><a href="#">Donec eu orci dolor</a>Pellentesque in nunc quam. Sed molestie ultricies ante, vel scelerisque diam varius sed.</li>
                   <li><a href="#">Aliquam bibendum vulputate</a>Auris nisl mi, aliquet ac lobortis ut, tincidunt in tortor vitae lectus dapibus pellentesque.</li>
                   <li><a href="#">Curabitur rutrum vestibulum</a>Nunc viverra vestibulum magna, nec dignissim turpis tincidunt. Donec ac nibh arcu.</li>
-                  <li><a href="#">Fusce placerat ultrices</a>Integer ac ultricies nisi. Curabitur velit ante, porttitor ac feugiat a, porta ut lectus.</li>
-              </ul>				
+                  <li><a href="#">Fusce placerat ultrices</a>Integer ac ultricies nisi. Curabitur velit ante, porttitor ac feugiat a, porta ut lectus.</li> {% endcomment %}
+            </ul>				
           </div> <!-- END of sidebar -->
                   
           <div class="cleaner"></div>

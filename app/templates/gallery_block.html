@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+   
+  {% block gallery_block_template %}
+
+        
+        <div class="section background-white"> 
+          <div class="line">
+            <div class="margin">
+              {% for block in gallery_blocks %}
+                <div class="s-12 m-6 l-4">
+                  <div class="image-with-hover-overlay image-hover-zoom margin-bottom">
+                    <div class="image-hover-overlay background-primary"> 
+                      <div class="image-hover-overlay-content text-center padding-2x" >
+                        <p>{{block.description}}</p>  
+                      </div> 
+                    </div> 
+                    <img src="{{block.image.url}}" alt="" title="{{block.image_title}}" />
+                  </div>	
+                </div>
+              {% endfor %}  
+              
+
+            </div>  
+          </div>
+        </div> 
+  
+      <footer>
+        <a href="{% url 'gallery' %}">Back to Gallery</a>
+    </footer>
+  {% endblock %}
+ 
